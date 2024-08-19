@@ -1,0 +1,39 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "plugin:@angular-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "@angular-eslint"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-console": "warn",
+      "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+      "quotes": ["error", "single"],
+      "@angular-eslint/directive-selector": [
+        "error",
+        { "type": "attribute", "prefix": "app", "style": "camelCase" }
+      ],
+      "@angular-eslint/component-selector": [
+        "error",
+        { "type": "element", "prefix": "app", "style": "kebab-case" }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
+  }
+  

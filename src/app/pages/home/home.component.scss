@@ -1,0 +1,52 @@
+@import '../../shared/styles/_variables.scss';
+
+.searchCountry {
+    margin-left: 65px;
+}
+
+.inputCountry {
+    margin: 20px;
+    width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $light-grey-color;
+    box-shadow: $box-shadow;
+    font-size: 16px;
+    position: relative;
+}
+
+.inputCountry:focus {
+    outline: 3px solid rgb(92, 120, 177);
+    box-shadow: 5px 5px 5px rgba(54, 108, 175, 0.474);
+    border: 1px solid rgb(157, 187, 240);
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+<div class="searchCountry my-4">
+  <form name="search">
+    <input
+      type="text"
+      [(ngModel)]="searchCountry"
+      class="inputCountry"
+      name="searchTerm"
+      (input)="findCountries()"
+      placeholder="Search country"
+    />
+  </form>
+</div>
+<div class="container me-5 ms-5">
+  <div class="row w-100">
+    <div class="col-md-6 mb-4">
+      <h2 class="mb-3">Countries</h2>
+
+      @if (countries.length > 0) {
+        <ul>
+          @for (country of filteredCountries; track $index) {
+            <li>
+              <a [routerLink]="['/country', country.countryCode]">{{
+                country.name
+              }}</a>
+            </li>
+          }
+        </ul>
+      }
+      @if (countries.length === 0) {
+        No countries found.
+      }
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="mb-3">Random Countries and Their Next Holidays</h2>
+      @for (country of randomCountries; track $index) {
+        <div>
+          <a [routerLink]="['/country', country.countryCode]">{{
+            country.name
+          }}</a>
+
+          @for (
+            holiday of getHolidaysForCountry(country.name.common);
+            track $index
+          ) {
+            <ul>
+              <li><b>Holiday: </b>{{ holiday.name }}</li>
+              <li><b>Date: </b> {{ holiday.date }}</li>
+            </ul>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

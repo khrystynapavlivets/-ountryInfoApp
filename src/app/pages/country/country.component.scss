@@ -1,0 +1,31 @@
+@import '../../shared/styles/_variables.scss';
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+
+#yearSelect {
+  font-size: 1rem;
+  padding: 0.7rem;
+  width: 8rem;
+  border: 1px solid $light-gray-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 2px 4px $box-shadow;
+}
+
+
+#yearSelect:focus {
+  border-color: $box-shadow-focus-button;
+  outline: none;
+}
+
+
+option {
+  padding: 0.5rem;
+}

@@ -1,0 +1,33 @@
+<div class="my-5 ms-5">
+  <label for="yearSelect">Select Year:</label>
+  <select
+    id="yearSelect"
+    [(ngModel)]="selectedYear"
+    (change)="onYearChange($event)"
+  >
+    @for (year of years; track $index) {
+      <option [value]="year">
+        {{ year }}
+      </option>
+    }
+  </select>
+</div>
+
+@if (holidays.length > 0) {
+  <div class="ms-5">
+    <h2>Свята для країни {{ holiday.name }}</h2>
+    <ul>
+      @for (holiday of holidays; track $index) {
+        <li>
+          <h3>{{ holiday.name }} ({{ holiday.localName }})</h3>
+          <p>Дата: {{ holiday.date }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+}
+@if (holidays.length === 0) {
+  <div>
+    <p>Немає свят для відображення.</p>
+  </div>
+}
